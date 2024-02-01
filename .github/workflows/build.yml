@@ -17,8 +17,18 @@ jobs:
 
         -   name: Install Python dependencies
             run: |
-                  python -m pip install --upgrade pip
-                  pip install numpy
+                    python -m pip install --upgrade pip
+                    pip install numpy
 
-        -   name: Check cargo
-            run: cargo --version
+        -   name: Compile, install and test native-template
+            working-directory: native-template
+            run: |
+                    pip install .
+                    python -c "import native_template; native_template.hello_world()"
+
+        -   name: Compile, install and test numpy-template
+            working-directory: numpy-template
+            run: |
+                    pip install .
+                    python -c "import numpy_template; native_template.eye(5)"
+
