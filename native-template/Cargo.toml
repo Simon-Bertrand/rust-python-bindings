@@ -1,12 +1,15 @@
 [package]
 name = "native_template"
 version = "0.1.0"
+authors = ["Simon Bertrand <simonbertrand.contact@gmail.com>"]
+
 edition = "2021"
 
 [lib]
 name = "native_lib"
 path = "src/lib.rs"
 crate-type = ["cdylib"]
+
 
 [dependencies]
 pyo3 = { version = "0.20.2", features = ["extension-module"] }
