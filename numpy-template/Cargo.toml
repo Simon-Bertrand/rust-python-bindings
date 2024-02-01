@@ -1,0 +1,15 @@
+[package]
+name = "rust-ext"
+version = "0.1.0"
+authors = ["Simon Bertrand <simonbertrand.contact@gmail.com>"]
+edition = "2018"
+
+[lib]
+name = "numpy_lib"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+ndarray = "0.15.3"
+numpy = "0.20.0"
