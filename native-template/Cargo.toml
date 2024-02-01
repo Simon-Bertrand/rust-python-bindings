@@ -1,5 +1,5 @@
 [package]
-name = "native_template"
+name = "native-template"
 version = "0.1.0"
 authors = ["Simon Bertrand <simonbertrand.contact@gmail.com>"]
 

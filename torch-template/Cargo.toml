@@ -1,15 +1,15 @@
 [package]
-name = "numpy-template"
+name = "torch-template"
 version = "0.1.0"
 authors = ["Simon Bertrand <simonbertrand.contact@gmail.com>"]
 edition = "2021"
 
 [lib]
-name = "numpy_lib"
+name = "torch_lib"
 path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = { version = "0.20", features = ["extension-module"] }
-ndarray = "0.15.3"
-numpy = "0.20.0"
+pyo3 = { version = "0.18.3", features = ["extension-module"] }
+pyo3-tch = "0.14.0"
+torch-sys = "0.14.0"
