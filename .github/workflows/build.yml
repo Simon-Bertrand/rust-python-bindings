@@ -36,6 +36,7 @@ jobs:
         -   name: Compile, install and test torch-template
             working-directory: torch-template
             run: |
+                    pip install torch==2.1.0
                     python -c "import torch
                     from torch.utils import cpp_extension
                     print('LIBTORCH_VERSION:', torch.__version__.split('+')[0])
