@@ -1,0 +1,3 @@
+[submodule "debug"]
+	path = debug
+	url = git@github.com:Simon-Bertrand/tch-rs-workflows-fix.git
