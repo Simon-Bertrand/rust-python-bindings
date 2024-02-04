@@ -42,7 +42,7 @@ jobs:
                     export LD_LIBRARY_PATH=$(python3 -c "import os, torch; print(os.path.join(torch.__path__[0], 'lib'))")
                     LIBTORCH_USE_PYTORCH=1 pip3 install . --extra-index-url https://download.pytorch.org/whl/cpu
                     # Cannot test as libcuda is missing and that we need to put in pyproject.toml a CPU binded version which is a invalid string ("+cpu" version)
-                    #python3 -c "import torch_template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
+                    python3 -c "import torch_template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
 
   
 
