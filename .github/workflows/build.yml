@@ -40,7 +40,7 @@ jobs:
             run: |
                     export LIBTORCH_USE_PYTORCH=1
                     pip install .
-                    python -c "import torch-template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
+                    python -c "import torch_template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
 
   
 
