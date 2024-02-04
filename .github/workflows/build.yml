@@ -40,7 +40,7 @@ jobs:
             run: |
                     git submodule update --init
                     pip install torch==2.2.0
-                    LIBTORCH_USE_PYTORCH=1 cargo build -vvv
+                    LIBTORCH_USE_PYTORCH=1 cargo build
 
   
 
