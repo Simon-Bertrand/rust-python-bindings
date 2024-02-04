@@ -38,6 +38,7 @@ jobs:
         -   name: Compile, install and test torch-template
             working-directory: torch-template
             run: |
+                    pip3 install pytorch==2.1.0
                     LIBTORCH_USE_PYTORCH=1 pip install . --extra-index-url https://download.pytorch.org/whl/cpu
                     # Cannot test as libcuda is missing and that we need to put in pyproject.toml a CPU binded version which is a invalid string ("+cpu" version)
                     python -c "import torch_template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
