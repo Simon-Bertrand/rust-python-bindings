@@ -34,11 +34,11 @@ jobs:
         #             pip install .
         #             python -c "import numpy_template, numpy as np; assert (numpy_template.eye(15) == np.eye(15)).all()"
 
-        
+        #export PYO3_PYTHON=$(python -c 'import sys; print(sys.executable)')
         -   name: Compile, install and test torch-template
             working-directory: torch-template
             run: |
-                    export PYO3_PYTHON=$(python -c 'import sys; print(sys.executable)')
+                    
                     git submodule update --init
                     pip install torch==2.2.0
                     LIBTORCH_USE_PYTORCH=1 cargo build -vv
