@@ -22,25 +22,25 @@ jobs:
                     python -m pip install --upgrade pip
                     pip install numpy
 
-        # -   name: Compile, install and test native-template
-        #     working-directory: native-template
-        #     run: |
-        #             pip install .
-        #             python -c "import native_template; assert native_template.hello_world()=='Hello World'"
+        -   name: Compile, install and test native-template
+            working-directory: native-template
+            run: |
+                    pip install .
+                    python -c "import native_template; assert native_template.hello_world()=='Hello World'"
 
-        # -   name: Compile, install and test numpy-template
-        #     working-directory: numpy-template
-        #     run: |
-        #             pip install .
-        #             python -c "import numpy_template, numpy as np; assert (numpy_template.eye(15) == np.eye(15)).all()"
+        -   name: Compile, install and test numpy-template
+            working-directory: numpy-template
+            run: |
+                    pip install .
+                    python -c "import numpy_template, numpy as np; assert (numpy_template.eye(15) == np.eye(15)).all()"
 
         
         -   name: Compile, install and test torch-template
             working-directory: torch-template
             run: |
-                    export PYO3_PYTHON=$(python -c 'import sys; print(sys.executable)')
-                    git submodule update --init
+                    export LIBTORCH_USE_PYTORCH=1
                     pip install .
+                    python -c "import torch-template, torch; assert (torch.arange(10) + 1 == torch_template.add_one(torch.arange(10))).all()"
 
   
 
